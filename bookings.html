@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Bookings</h2>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Flight</th><th>Passenger</th><th>Seat</th><th>Price</th><th>Action</th>
+    </tr>
+    {% for b in bookings %}
+    <tr>
+        <td>{{ b[0] }}</td><td>{{ b[1] }}</td><td>{{ b[2] }}</td><td>{{ b[3] }}</td><td>${{ b[4] }}</td>
+        <td><a href="{{ url_for('delete_booking', booking_id=b[0]) }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

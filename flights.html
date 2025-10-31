@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Flights</h2>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Flight</th><th>From</th><th>To</th><th>Departure</th><th>Arrival</th><th>Status</th>
+    </tr>
+    {% for f in flights %}
+    <tr>
+        <td>{{ f[0] }}</td><td>{{ f[1] }}</td><td>{{ f[2] }}</td><td>{{ f[3] }}</td>
+        <td>{{ f[4] }}</td><td>{{ f[5] }}</td><td>{{ f[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

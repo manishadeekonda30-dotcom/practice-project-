@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Flight Status</h2>
+<form method="post">
+    <label>Flight:</label>
+    <select name="flight_id">
+        {% for f in flights %}
+            <option value="{{ f[0] }}">{{ f[1] }}</option>
+        {% endfor %}
+    </select><br><br>
+    <label>New Status:</label>
+    <input type="text" name="status" placeholder="Scheduled, Departed, etc." required><br><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
